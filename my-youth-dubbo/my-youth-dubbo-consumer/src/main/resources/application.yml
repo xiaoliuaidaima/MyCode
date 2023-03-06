@@ -1,0 +1,21 @@
+server:
+  port: 3001
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: cloud-dubbo-consumer
+#dubbo消费者
+dubbo:
+  registry:
+    address: spring-cloud://localhost  #使用cloud的注册中心
+  consumer:
+    check: false    #dubbo默认有启动检查
+    retries: 0     #dubbo内置的重试机制
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS

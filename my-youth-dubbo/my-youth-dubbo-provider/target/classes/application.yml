@@ -1,0 +1,31 @@
+server:
+  port: 8002
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: cloud-dubbo-provider
+  datasource:
+    #druid:
+    url: jdbc:mysql://localhost:3306/homework?serverTimezone=UTC%2b8&characterEncoding=utf8&useUnicode=true&useSSL=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+#dubbo提供者
+dubbo:
+  #注册中心的地址
+  registry:
+    address: spring-cloud://localhost  #使用springcloud中注册中心的地址
+  scan:
+    base-packages: cn.itcast.user.service #扫描的接口
+  #内置netty对外协议及对外端口
+  protocol:
+    name: dubbo
+    port: 20884
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS

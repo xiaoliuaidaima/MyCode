@@ -1,0 +1,3 @@
+cn\itcast\user\mapper\UserMapper.class
+cn\itcast\user\service\impl\UserServiceImpl.class
+cn\itcast\user\CloudDubboProviderApplication.class
